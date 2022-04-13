@@ -1,14 +1,28 @@
 # backend-rs
-A template for common backend work in Rust.
+Templates and examples for common backend work in Rust.
 
 ## API
 Build your API with [axum](https://github.com/tokio-rs/axum) - it provides routing, request parsing (extractors), built on `tower` and `tower-http`.
 
 ## Caching
-Cache API requests with `moka`.
+Cache API requests with `moka`. (TODO)
 
 ## Storage
-Persistent storage with Postgres.
+Persistent storage with Postgres. (TODO)
 
-## Deploy
+## Deployments
 Containerize the app with Docker scratch image.
+
+### Build Image
+In the project root:
+``` sh
+docker build -t backend-rs:scratch -f Dockerfile .
+```
+
+### Run Container
+``` sh
+docker run -p {LOCAL_MACHINE_PORT}:{APPLICATION_PORT} --rm backend-rs:scratch
+```
+
+
+
